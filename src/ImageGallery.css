@@ -1,0 +1,74 @@
+body{
+    background: #221c38;
+}
+
+.gallery-image{
+    background-color: white;
+}
+.prev-image-container{
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    backdrop-filter: blur(6px);
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    display: flex;
+}
+
+.close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgb(255, 209, 253);
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 0px;
+    font-weight: bold;
+    box-shadow: 0px 1px 5px 0px rgba(8, 8, 8, 0.822);
+    color: #221c38;
+}
+
+.close-btn:hover{
+    background: rgb(212, 77, 77);
+    color: white;
+}
+
+.prev-next-btn{
+    border-radius: 8px;
+    border: 0px;
+    height: 40px;
+    width: 25px;
+    box-shadow: 0px 1px 5px 0px rgba(8, 8, 8, 0.822);
+    background: rgb(255, 209, 253);
+    margin: 10px;
+    cursor: pointer;
+    padding: 0;
+    padding-top: 3px;
+    font-size: 25px;
+    color: #221c38;
+}
+
+.prev-next-btn:hover{
+    color: white;
+    background-color: rgb(89, 55, 121);
+}
+
+.current-image{
+    margin-top: -5%;
+    width: auto;
+    max-width: 90%;
+    max-height: 80%;
+    background: white;
+    border-radius: 0.4rem;
+    box-shadow: 0px 1px 5px 0px rgba(8, 8, 8, 0.705);
+}
+
+.gallery-image{
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
