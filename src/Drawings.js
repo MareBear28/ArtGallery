@@ -55,4 +55,5 @@ const details = [
     "This is a portrait of one of my best friends, Yajaira. \n This drawing was meant as a birthday present for her."
 ]
 
-export {images, titles, details};
+export default images;
+export {titles, details};

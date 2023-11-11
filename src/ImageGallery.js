@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import './ImageGallery.css'
-import {images, titles, details} from './Drawings'
+import images, {titles, details} from './Drawings'
 import {MdKeyboardArrowLeft, MdKeyboardArrowRight} from  'react-icons/md'
 
 const ImageGallery = () => {
@@ -30,11 +30,22 @@ const ImageGallery = () => {
     return (
         <>
             {data.img &&
-                <div class='prev-image-container'>
-                    <button className='close-btn' onClick={() => clickImage()}> X </button>
-                    <button className='prev-next-btn' onClick={() => clickImage('prevImage')}><MdKeyboardArrowLeft/></button>
-                    <img className='current-image' src={data.img}/>
-                    <button className='prev-next-btn' onClick={() => clickImage('nextImage')}><MdKeyboardArrowRight/></button>
+
+                <div className='prev-main-container'>
+                    <div className='prev-image-container'>
+                        <button className='close-btn' onClick={() => clickImage()}> X </button>
+                        <button className='prev-next-btn' onClick={() => clickImage('prevImage')}><MdKeyboardArrowLeft/></button>
+                        <img className='current-image' src={data.img}/>
+                        <button className='prev-next-btn' onClick={() => clickImage('nextImage')}><MdKeyboardArrowRight/></button>
+                    </div>
+                    <div className='detail-btns-contianer'>
+                    <button className='prev-next-btn-2' onClick={() => clickImage('prevImage')}><MdKeyboardArrowLeft/></button>
+                    <div className='details'>
+                        <h2>{titles[data.i]}</h2>
+                        <p>{details[data.i]}</p>
+                    </div>
+                    <button className='prev-next-btn-2' onClick={() => clickImage('nextImage')}><MdKeyboardArrowRight/></button>
+                    </div>
                 </div>
             }
 
@@ -42,7 +53,7 @@ const ImageGallery = () => {
                 <ResponsiveMasonry columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}>
                     <Masonry gutter='20px'>
                         {images.map((image, i) => (
-                            <img classname='gallery-image'
+                            <img className='gallery-image'
                                 key={i}
                                 src={image}
                                 alt=""
